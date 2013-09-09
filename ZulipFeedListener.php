@@ -29,9 +29,9 @@ function get_connected_conduit() {
   $conduit->callMethodSynchronous(
     'conduit.connect',
     array(
-      'client'            => 'Zulip',
-      'clientVersion'     => '1.0',
-      'clientDescription' => 'Zulip integration',
+      'client'            => CLIENT,
+      'clientVersion'     => CLIENT_VERSION,
+      'clientDescription' => CLIENT_DESCRIPTION,
       'user'              => CONDUIT_USER,
       'certificate'       => CONDUIT_CERT
     )
@@ -41,7 +41,8 @@ function get_connected_conduit() {
 
 function get_latest_stories($conduit, $last_reported_timestamp) {
   // This code can be simplified once https://secure.phabricator.com/D6903
-  // is deployed widely.
+  // is deployed widely.  Until then, we do this kind of awkward loop back
+  // through the chronologically descending results.
   $after = 0;
   $stories = array();
 

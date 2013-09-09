@@ -26,4 +26,6 @@ const ZULIP_HOST = 'http://showell.com:9991';
 const FEED_POLLING_INTERVAL = 3; // seconds
 const QUERY_CHUNK_SIZE = 10;
 const ZULIP_RATE_LIMITING_WAIT = 0.7; // seconds
-
+const CLIENT = 'Zulip';
+const CLIENT_VERSION = '1.0';
+const CLIENT_DESCRIPTION = 'Zulip integration';
