@@ -1,7 +1,8 @@
-zulip-phabricator-plugin
+phabricator-to-zulip
 ========================
 
-This is Zulip's plugin for Phabricator.
+This standalone tool reads Phabricator's story feed and sends updates
+to the Zulip chat system.
 
 Instructions:
 
@@ -11,8 +12,8 @@ Instructions:
 * Choose a directory where you want to install the integration software.  A reasonable
   place would be the parent directory of the "phabricator" directory of your Phabricator
   installation, but it's fairly arbitrary.
-* `git clone https://github.com/showell/zulip-phabricator-plugin.git`
-* `cd zulip-phabricator-plugin`
+* `git clone https://github.com/showell/phabricator-to-zulip.git`
+* `cd phabricator-to-zulip`
 * Collect the following information:
     * your Zulip API key
     * the location of Phabricator's `__init_script__.php` file
