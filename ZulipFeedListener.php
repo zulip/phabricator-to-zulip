@@ -6,7 +6,7 @@ require_once PHABRICATOR_INIT_SCRIPT;
 function post_to_zulip($content) {
   sleep(ZULIP_RATE_LIMITING_WAIT);
 
-  $url = ZULIP_HOST . '/api/v1/messages';
+  $url = ZULIP_HOST . '/v1/messages';
 
   $data = array(
     "type" => 'stream',
