@@ -1,24 +1,23 @@
 phabricator-to-zulip
 ========================
 
-This standalone tool reads Phabricator's story feed and sends updates
-to the Zulip chat system.
+This daemon reads [Phabricator](http://phabricator.org/)'s story feed and sends
+updates to the [Zulip](https://zulip.com/) chat system.
 
-Instructions:
+## Instructions
 
-* Create a stream called "Phabricator" in your Zulip realm.
+* Create a stream called "Phabricator" inside Zulip.
 * Ensure that you and other users are subscribed to the stream.
-* Install Phabricator.
-* Choose a directory where you want to install the integration software.  A reasonable
-  place would be the parent directory of the "phabricator" directory of your Phabricator
-  installation, but it's fairly arbitrary.
+* Choose a directory where you want to install the integration software.  A
+  reasonable place would be the parent directory of the "phabricator" directory
+  of your Phabricator installation, but it's fairly arbitrary.
 * `git clone https://github.com/showell/phabricator-to-zulip.git`
 * `cd phabricator-to-zulip`
 * Collect the following information:
     * your Zulip API key
     * the location of Phabricator's `__init_script__.php` file
-    * your Conduit certificate for Phabricator
-* Edit ZulipConfig.php to suit your installation.
+    * your Conduit certificate for Phabricator (typically in `~/.arcrc`)
+* Edit `ZulipConfig.php` to suit your installation.
     * This is very important!
     * You will typically modify about eight configuration parameters.
 * Run the listener program: `php ZulipFeedListener.php'
