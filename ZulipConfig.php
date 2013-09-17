@@ -1,28 +1,31 @@
 <?php
 
-// IMPORTANT! Edit this file for your installation.
+// Zulip Phabricator plugin configuration
+// Edit these to match your local settings
 
-// PHP stuff:
-// This will almost certainly be different for your installation, and you need this
-// to be able to use some Phabricator libraries.
-const PHABRICATOR_INIT_SCRIPT = '/Users/showell/PHP/phabricator/scripts/__init_script__.php';
+// Path to your Phabricator __init_script__.php
+// Defaults to assuming your installation is in the script's parent directory
+const PHABRICATOR_INIT_SCRIPT = '../phabricator/scripts/__init_script__.php';
 
-// Zulip stuff:
-// Edit your user information and desired stream name.  Note that you
-// must create the stream on Zulip and subscribe people to it.
-const ZULIP_USER = 'steve@zulip.com';
-const ZULIP_API_KEY = 'rHb96zCCV3ZCFFOAHBQ2m7TH1puIdnY7'; // find this on the Settings page
-const ZULIP_STREAM_NAME = 'Phabricator'; // set this up on Zulip!
-const ZULIP_TOPIC_NAME = 'feed'; // this requires no setup
+// Your Zulip username or the username of the bot you created for this purpose
+const ZULIP_USER = 'phabricator-bot@example.com';
 
-// Phabricator stuff:
-const PHABRICATOR_HOST = 'http://showell.com';
-const CONDUIT_USER = 'steve';
-const CONDUIT_CERT = 'zmjvsixfodf2vklo576oh5fnmpulfm4l3dfxllw6hgwiqsdmevei3pdqv4a2bpnjdhcvi7el32e25ero4aaqnwpqeh7tcgmn435fu5x23i5luybwlxvpadhaurzzsigtdwd76vfipztpmgoip4ra3eacgork2gqcehpslvdgjypuvtdkmitiwqkr45amfgshpb5s2iv6m4kvcbqzmawraoc6t5uswtwskayqco3ioakqxlqjw2oxk3qwdsfuz6j';
+// API key for the aformentioned user; find it on the "Settings" tab on Zulip
+const ZULIP_API_KEY = 'rHb96zCCV3ZCFFOAHBQ2m7TH1puIdnY7';
+// Name of the target stream for your notifications. You must create it if it does not already exist.
+const ZULIP_STREAM_NAME = 'Phabricator';
+// Topic to send story notifications to.
+const ZULIP_TOPIC_NAME = 'feed';
+
+// URL for your Phabricator installation
+const PHABRICATOR_HOST = 'http://phabricator.example.com/';
+// User and certificate for connecting with Phabricator; find the certificate in ~/.arcrc
+const CONDUIT_USER = 'othello';
+const CONDUIT_CERT = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456';
 
 
-// Stuff you probably don't need to change:
-const ZULIP_HOST = 'http://showell.com:9991';
+// Miscellaneous configuration; should not require manual editing
+const ZULIP_HOST = 'https://api.zulip.com/';
 const FEED_POLLING_INTERVAL = 3; // seconds
 const QUERY_CHUNK_SIZE = 10;
 const ZULIP_RATE_LIMITING_WAIT = 0.7; // seconds
