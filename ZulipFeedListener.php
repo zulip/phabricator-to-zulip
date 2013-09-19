@@ -15,7 +15,7 @@ function post_to_zulip($content) {
     "content" => $content
   );
 
-  $request = new HTTPFuture($url);
+  $request = new HTTPSFuture($url);
   $request->setMethod('POST');
   $request->addHeader('Authorization', 'Basic ' . base64_encode(ZULIP_USER . ':' . ZULIP_API_KEY));
   $request->setData($data);
