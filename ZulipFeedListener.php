@@ -12,7 +12,8 @@ function post_to_zulip($content) {
     "type" => 'stream',
     "to" => ZULIP_STREAM_NAME,
     "subject" => ZULIP_TOPIC_NAME,
-    "content" => $content
+    "content" => $content,
+    "client" => 'phabricator'
   );
 
   $request = new HTTPSFuture($url);
