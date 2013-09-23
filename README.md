@@ -15,7 +15,7 @@ updates to the [Zulip](https://zulip.com/) chat system.
 3. Choose a directory where you want to install the integration software.  A
   reasonable place would be the parent directory of the "phabricator" directory
   of your Phabricator installation, but it's fairly arbitrary.
-4. `git clone https://github.com/showell/phabricator-to-zulip.git`
+4. `git clone https://github.com/zulip/phabricator-to-zulip.git`
 5. `cd phabricator-to-zulip`
 6. Collect the following information:
     * the location of Phabricator's `__init_script__.php` file
@@ -25,7 +25,7 @@ updates to the [Zulip](https://zulip.com/) chat system.
     * You will typically modify about eight configuration parameters.
 8. Run the listener program: `php ZulipFeedListener.php`
     * You may need to locate the php binary in your system.
-    * Do not stop the program (it is a long running program).
+    * You will only receive notifications while this program is running.
 9. Try triggering these Phabricator events while watching your "Phabricator" stream on Zulip:
     * Edit a Maniphest task.
     * Edit a Differential code review.
