@@ -3,15 +3,23 @@
 require_once 'ZulipConfig.php';
 require_once PHABRICATOR_INIT_SCRIPT;
 
+function get_topic_from_content($content) {
+  if (preg_match("/revision (D\d+)/", $content, $matches)) {
+    return $matches[1];
+  }
+  return ZULIP_TOPIC_NAME; // default
+}
+
 function post_to_zulip($content) {
   sleep(ZULIP_RATE_LIMITING_WAIT);
 
   $url = ZULIP_HOST . '/v1/messages';
+  $topic = get_topic_from_content($content);
 
   $data = array(
     "type" => 'stream',
     "to" => ZULIP_STREAM_NAME,
-    "subject" => ZULIP_TOPIC_NAME,
+    "subject" => $topic,
     "content" => $content,
     "client" => 'phabricator'
   );
