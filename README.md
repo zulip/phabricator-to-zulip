@@ -29,3 +29,9 @@ updates to the [Zulip](https://zulip.com/) chat system.
 9. Try triggering these Phabricator events while watching your "Phabricator" stream on Zulip:
     * Edit a Maniphest task.
     * Edit a Differential code review.
+
+## License
+
+Copyright © 2013 Dropbox, Inc. All rights reserved. 
+
+Licensed under the Apache License, Version 2.0. See `LICENSE` for details.
