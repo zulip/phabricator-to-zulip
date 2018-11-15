@@ -11,7 +11,7 @@ const PHABRICATOR_INIT_SCRIPT = '../phabricator/scripts/__init_script__.php';
 const ZULIP_USER = 'phabricator-bot@example.com';
 
 // API key for the aformentioned user; find it on the "Settings" tab on Zulip
-const ZULIP_API_KEY = 'rHb96zCCV3ZCFFOAHBQ2m7TH1puIdnY7';
+const ZULIP_API_KEY = 'abcdef01234567890';
 // Name of the target stream for your notifications. You must create it if it does not already exist.
 const ZULIP_STREAM_NAME = 'Phabricator';
 // Topic to send story notifications to.
